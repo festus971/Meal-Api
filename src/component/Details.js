@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const SEARCH_MEAL = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
+const MEAL = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
 
 export default function Details(){
 
@@ -13,9 +13,9 @@ export default function Details(){
 
     let {mealId} = useParams()
 
-    const actualSearch = SEARCH_MEAL + mealId
+    const actualSearch = MEAL + mealId
 
-    const mealFetcher = () => {
+    useEffect(() => {
         fetch(actualSearch)
             .then((response) => response.json())
             .then((data) => {
@@ -27,16 +27,12 @@ export default function Details(){
                 setImage(meal.strMealThumb)
                 
             })
-    }
-
-    useEffect(
-        mealFetcher, []
-    )
+    }, [])
 
     return(
         <div className="container">
             <center>
-                <img src={image} style={{height: 200 + 'px', width: 200 + 'px',}} />
+                <img src={image} alt="" style={{height: 200 + 'px', width: 200 + 'px',}} />
                 <h4>{title}</h4>
                 <h6 className="badge bg-success">{category}</h6>
                 <p>{instructions}</p>
