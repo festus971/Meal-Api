@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MealCard from "./MealCard";
 
-const BREAKFAST_MEALS = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
+const BREAKFAST = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
 
 export default function Home(){
 
@@ -9,7 +9,7 @@ export default function Home(){
 
     // load items from internet
     const mealFetcher = () => {
-        fetch(BREAKFAST_MEALS)
+        fetch(BREAKFAST)
             .then((response) => response.json())
             .then((data) => {
                 setMeals(data.meals)
