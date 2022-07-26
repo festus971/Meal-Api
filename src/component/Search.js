@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const SEARCH_MEAL = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
+const SEARCH = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
 
 export default function Search(){
 
@@ -19,9 +19,10 @@ export default function Search(){
 
     
 
+    
     const searchInfo = () => {
 
-        const actualSearch = SEARCH_MEAL + searchItem
+        const actualSearch = SEARCH + searchItem
 
         fetch(actualSearch)
         .then((response) => response.json())
