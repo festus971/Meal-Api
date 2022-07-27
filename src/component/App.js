@@ -1,29 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-
-
-// function App() {
-
-// const [meal, setMeal]=useState([])
-
-
-// useEffect(()=>{
-//   fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=e")
-//   .then(response=>response.json())
-//   .then(meal=>setMeal(meal))
-// },[])
-
-
-
-//   return (
-//     <div className="App">
-      
-
-      
-//     </div>
-//   );
-// }
-
-// export default App;
 import React, { useState } from "react";
 import NavBar from "./NavBar";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
