@@ -3,7 +3,7 @@ import MealCard from "./MealCard";
 
 const BREAKFAST = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
 
-export default function Home(){
+export default function Home({onDetailsClick}){
 
     const [meals, setMeals] = useState([])
 
@@ -13,14 +13,18 @@ export default function Home(){
             .then((response) => response.json())
             .then((data) => {
                 setMeals(data.meals)
+                console.log(data)
             })
+            .catch(error=>console.log(error))
+
     }
 
     useEffect(
         mealFetcher, []
     )
 
-    let mealCards = meals.map((meal) => (<MealCard mealName={meal.strMeal} mealThumbnail={meal.strMealThumb} mealId={meal.idMeal} key={meal.idMeal}/>))
+    let mealCards = meals.map((meal) => (<MealCard mealName={meal.strMeal}
+         mealThumbnail={meal.strMealThumb}meal={meal} onDetailsClick={onDetailsClick} mealId={meal.idMeal} key={meal.idMeal}/>))
 
     return(
         <div className="container">
