@@ -14,10 +14,9 @@ export default function Details(){
     let {mealId} = useParams()
 
     
+    const [actualSearch] = MEAL + mealId
 
-    const mealFetcher = () => {
-        
-        const actualSearch = MEAL + mealId
+    useEffect( () => {
         fetch(actualSearch)
             .then((response) => response.json())
             .then((data) => {
@@ -29,16 +28,12 @@ export default function Details(){
                 setImage(meal.strMealThumb)
                 
             })
-    }
-
-    useEffect(
-        mealFetcher, []
-    )
+    }, [actualSearch])
 
     return(
         <div className="container">
             <center>
-                <img src={image} alt="ima" style={{height: 200 + 'px', width: 200 + 'px',}} />
+                <img src={image} alt="" style={{height: 200 + 'px', width: 200 + 'px',}} />
                 <h4>{title}</h4>
                 <h6 className="badge bg-success">{category}</h6>
                 <p>{instructions}</p>
