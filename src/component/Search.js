@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import Details from "./Details";
 
 const SEARCH = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
 
@@ -20,7 +19,9 @@ export default function Search(){
 
     
 
-    
+    useEffect(()=>{
+        
+    })
     const searchInfo = () => {
 
         const actualSearch = SEARCH + searchItem
@@ -44,7 +45,7 @@ export default function Search(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="search" className="form-label">SEARCH MEAL</label>
-                    <input type="text" className="form-control" id="search" name="search" value={searchItem.key} onChange={handleSearch}/>
+                    <input type="text" className="form-control" id="search" name="search" value={searchItem} onChange={handleSearch}/>
                 </div>
             </form>
             <h3 className="mt-4">SEARCH RESULTS ({results})</h3>
