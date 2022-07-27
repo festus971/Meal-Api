@@ -1,5 +1,6 @@
 
 import React from "react";
+import "./style/Details.css"
 export default function Details({meal}){
 
 
