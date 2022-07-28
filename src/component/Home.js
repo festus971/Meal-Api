@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import MealCard from "./MealCard";
 
-const BREAKFAST = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
+const BREAKFAST = "https://stormy-gorge-09324.herokuapp.com/meals"
 
 export default function Home({onDetailsClick}){
 
     const [meals, setMeals] = useState([])
 
-    // load items from internet
+    // load internet.
     const mealFetcher = () => {
         fetch(BREAKFAST)
             .then((response) => response.json())
             .then((data) => {
-                setMeals(data.meals)
+                setMeals(data)
                 console.log(data)
             })
             .catch(error=>console.log(error))
@@ -22,9 +22,13 @@ export default function Home({onDetailsClick}){
     useEffect(
         mealFetcher, []
     )
+    console.log(meals)
 
-    let mealCards = meals.map((meal) => (<MealCard mealName={meal.strMeal}
-         mealThumbnail={meal.strMealThumb}meal={meal} onDetailsClick={onDetailsClick} mealId={meal.idMeal} key={meal.idMeal}/>))
+
+    const mealCards = meals.map((meal) => (
+    <MealCard mealName={meal.strMeal}
+         mealThumbnail={meal.strMealThumb} meal={meal} onDetailsClick={onDetailsClick} mealId={meal.idMeal} key={meal.idMeal}/>
+    ))
 
     return(
         <div className="container">
