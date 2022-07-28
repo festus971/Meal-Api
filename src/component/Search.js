@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const SEARCH = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
+const SEARCH = "https://stormy-gorge-09324.herokuapp.com/meals/"
 
 export default function Search(){
 
     const [searchItem, setSearchItem] = useState("")
     const [counter, setCounter] = useState(0)
-    const [results, setResults] = useState(0)
+    const [results, setResults] = useState("")
 
     const handleSearch = (event) => {
         setSearchItem(event.target.value)
