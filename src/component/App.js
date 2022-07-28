@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import NavBar from "./NavBar";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 import Search from "./Search";
 import Details from "./Details";
+import {PropagateLoader} from "react-spinners";
 
 function App() {
   const[meal,setMeal]=useState(null)
+
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true)
+   setTimeout(() => {
+      setLoading(false)
+    }, 5000)
+  }, []);
 
   function onDetailsClick(clickedMeal){
     setMeal(clickedMeal)
@@ -15,6 +24,7 @@ function App() {
   }
 
   return (
+    <div>
     <Router>
       <div>
         <NavBar/>
@@ -28,7 +38,17 @@ function App() {
 
     </Router>
    
+    {
+
+loading ? <PropagateLoader  loading={loading}  size={10} />
+  :<div>
+
+</div>
+  }
+</div>
   );
+  
+  
 }
 
 export default App;
