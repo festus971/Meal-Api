@@ -12,7 +12,8 @@ export default function MealCard({mealName, mealThumbnail, mealId,onDetailsClick
 
     return (
         <div className="card" style={{width: 18 + 'rem'}}>
-            <img src={mealThumbnail} className="card-img-top" alt={mealName}/>
+            
+            <img src={mealThumbnail} className="card-img-top" alt={mealName} style={{height:"200px"}}/>
             <div className="card-body">
                 <h5 className="card-title">{mealName}</h5>
                 <Link to={"/meal/"+mealId}onClick={handleOnClick} className="btn btn-primary">DETAILS</Link>
