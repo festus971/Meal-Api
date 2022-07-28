@@ -6,6 +6,7 @@ import Search from "./Search";
 import Details from "./Details";
 import {PropagateLoader} from "react-spinners";
 
+
 function App() {
   const[meal,setMeal]=useState(null)
 
