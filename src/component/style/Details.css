@@ -1,11 +1,15 @@
 
-.container{
+.card{
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgb(75, 71, 71);
     margin: 20px;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    padding-right: 100px;
     justify-content: space-around;
     background: white;
     align-items: center;
     }
+    .card-img-top{
+        margin-left: 120px;
+    }
+    
