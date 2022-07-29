@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import NavBar from "./NavBar";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Home";
-import Search from "./Search";
+// import Search from "./Search";
 import Details from "./Details";
 import {PropagateLoader} from "react-spinners";
 
@@ -33,7 +33,6 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Home onDetailsClick={onDetailsClick}/>}></Route>
-        <Route exact path="/search" element={<Search/>}></Route>
         <Route exact path="/meal/:mealId" element={<Details meal={meal}/>}></Route>
       </Routes>
 
