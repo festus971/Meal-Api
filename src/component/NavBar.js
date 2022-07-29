@@ -9,9 +9,6 @@ export default function NavBar(){
                     <li className="nav-item">
                         <Link className="nav-link" to="/">HOME</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/search">SEARCH</Link>
-                    </li>
                 </ul>
             </div>
         </nav>
