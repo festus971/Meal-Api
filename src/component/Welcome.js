@@ -4,11 +4,11 @@ import "./css/Login.css";
 const Welcome = () => {
   return (
     <div className='images'>
-      <p>Feeling Hungry ?
+      <p>Are You Starving ?
         <br/>
-        Well look no further, we've got you
+        Well don't panic, we're here for You. Utaenjoy....
         <br/>
-        Try out our amazing meals ranging from different categories of foods Just Click on the Home icon
+        Sample out our amazing meals ranging from different categories of foods Just Click on the Home icon
         <br/>
         Welcome!
         </p>
