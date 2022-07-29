@@ -7,8 +7,8 @@ export default function Home({onDetailsClick}){
 
     const [meals, setMeals] = useState([])
 
-    // load internet.
-    const mealFetcher = () => {
+   
+    const Fetcher = () => {
         fetch(BREAKFAST)
             .then((response) => response.json())
             .then((data) => {
@@ -20,7 +20,7 @@ export default function Home({onDetailsClick}){
     }
 
     useEffect(
-        mealFetcher, []
+        Fetcher, []
     )
     console.log(meals)
 
