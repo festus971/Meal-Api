@@ -1,7 +1,7 @@
 ## MEALAPP.
 This is the name of the website.
 ## Description
-This website enables customers to view food and be able to know more about the recipe of the food available simply on the Details icon on the page..
+This website enables customers to view meal and be able to know more about the recipe of the food available simply on the Details icon on the page..
 ## Screenshot
 ![MEALAPP](./public/MEALAPP.png)
 ## Features

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import NavBar from "../src/component/NavBar";
-import Home from "../src/component/Home";
+import Recipe from "../src/component/Recipe";
 import Login from "../src/component/Login";
 import Details from "../src/component/Details";
-import Welcome from "../src/component/Welcome";
+import Home from "./component/Home";
 
 function App() {
   const [meal, setMeal] = useState(null);
@@ -29,10 +29,10 @@ function App() {
           <NavBar />
         </div>
         <Routes>
-          <Route exact path="/" element={<Home onDetailsClick={onDetailsClick} />}></Route>
+          <Route exact path="/" element={<Recipe onDetailsClick={onDetailsClick} />}></Route>
           <Route exact path="/meal/:mealId" element={<Details meal={meal} />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
-          <Route exact path="/images" element={<Welcome />}></Route>
+          <Route exact path="/images" element={<Home />}></Route>
         </Routes>
       </Router>
 
