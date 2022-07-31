@@ -9,7 +9,7 @@ const Welcome = () => {
         <br/>
         Well don't panic, we're here for You.....
         <br/>
-        Sample out our amazing meals ranging from different categories of foods Just Click on the Home icon
+        Sample out our amazing meals ranging from different categories of foods Just Click on the Recipe icon ON THE Left side.
         <br/>
         Welcome!
         </p>
